@@ -1,0 +1,209 @@
+
+		<!-- Navigation
+		================================================== -->
+		
+		<nav class="navbar navbar-dark bg-inverse bg-inverse-custom navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="http://www.kurukshetra.org.in">
+					<img src="/img/k_white.png" width="200px" height="200px" style="display:-moz-box" class="img-fluid">
+					<span class="sr-only">Land.io</span>
+				</a>  
+			</div>
+		</nav>
+		
+		
+		<!-- Hero Section
+		================================================== -->
+		
+		<header class="jumbotron bg-inverse text-xs-center center-vertically" role="banner" style="    background-blend-mode: overlay;">
+			<div class="container">
+				<h1 class="display-3">Come, join us.</h1>
+				<h2 class="m-b-3">Let the <em>battle of brains </em>begin @ <a href="#" class="jumbolink">k!urukshetra</a>.</h2>
+				<div class="icobutton icobutton--heart">
+					<span class="fa fa-heart" style="font-size:300%;" onclick="upCounter();"></span>
+				</div>
+				<ul class="nav nav-inline social-share">
+					<li class="nav-item"><a class="nav-link" href="#"><span class="icon-twitter"></span></a></li>
+					<li class="nav-item"><a class="nav-link" href="#"><span class="icon-facebook"></span></a></li>
+					<li class="nav-item"><a class="nav-link" href="#"><span class="icon-linkedin"></span></a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<!-- Intro
+		================================================== -->
+		
+		<section class="section-intro bg-faded text-xs-center">
+			<div class="container">
+				<h3 class="wp wp-1">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				</h3>
+				<p class="lead wp wp-2">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+				</p>
+				<img src="/img/balloons.svg" width="400px" height="400px" style="display:-moz-box" class="img-fluid wp wp-3">
+				<br/>
+				<br/>
+			</div>
+		</section>
+
+		
+		<!-- Features
+		================================================== -->
+		
+		<section class="section-features text-xs-center">
+			<div class="container">
+				<h1 class="display-3">Some Stats YO!</h1>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-block">
+								<span class="fa fa-heart"></span>
+								<h4 class="card-title">
+									<span class="counter"><%= @l.count %></span>+
+								</h4>
+								<h6 class="card-subtitle text-muted">favourites</h6>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-block">
+								<span class="fa fa-commenting"></span>
+								<h4 class="card-title">
+									<span class="counter"><%= @tweets.count %></span>+
+								</h4>
+								<h6 class="card-subtitle text-muted">tweets</h6>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card m-b-0">
+							<div class="card-block">
+								<span class="fa fa-coffee"></span>
+								<h4 class="card-title">
+									<span class="counter">40</span>+
+								</h4>
+								<h6 class="card-subtitle text-muted">coffee</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+		<% if !cookies[:isValid] %>
+		<!-- Pricing
+		================================================== -->
+		
+		<section class="section-pricing bg-faded text-xs-center">
+			<div class="container">
+				<h3>Have a word</h3>
+				<div class="row p-y-3">
+					<div class="col-md-4 p-t-md wp wp-5">
+						<div class="card pricing-box">
+							
+							<div class="card-block">
+								<p class="card-title">We would love to hear it from U</p>
+								<h4 class="card-text">
+									<span class="pricing-box-price"><span class="fa fa-smile-o"></span></span>
+								</h4>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-md-4 stacking-top">
+						<div class="card pricing-box pricing-best p-x-0">
+							<div class="card-header text-uppercase">
+								Professional
+							</div>
+							<form method="post" action="/create">
+								<div class="form-group has-icon-left form-control-name" style="left: 10px;top: 30px;padding-right: 20px;">
+									<label class="sr-only" for="inputName">Your name</label>
+									<input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Your name" required>
+								</div>
+								<div class="form-group has-icon-left form-control-name" style="left: 10px;top: 30px;padding-right: 20px;">
+									<label class="sr-only" for="inputName">Your Text</label>
+									<input type="text" class="form-control form-control-lg" id="content" name="content" placeholder="Your Text" required>
+								</div>
+								<br/>
+								<input type="submit" class="btn btn-primary" value="podu">
+							</form>
+						</div>
+					</div>
+					<div class="col-md-4 p-t-md wp wp-5">
+						<div class="card pricing-box">
+							
+							<div class="card-block">
+								<p class="card-title">Brag it loud</p>
+								<h4 class="card-text">
+									<span class="pricing-box-price"><span class="fa fa-bullhorn"></span></span>
+								</h4>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<% end %>
+		
+		<!-- Messages
+		================================================== -->
+		
+		<section class="section-features text-xs-center">
+			<div class="container">
+				<h1 class="display-3">Showering Tweets</h1>
+				<hr/>
+				<br/>
+				<div class="row">
+
+					<% @tweets.each do |tweet| %>
+					<div class="col-md-6 col-lg-4">
+						<div class="card">
+							<div class="card-block">
+								<span class="fa fa-heart"></span>
+								<h4 class="card-title"><%= tweet.name %></h4>
+								<p class="card-text"><%= tweet.content %></p>
+								<hr/>
+							</div>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</section>
+		
+		
+		<!-- Footer
+		================================================== -->
+		
+		<footer class="section-footer bg-inverse" role="contentinfo">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-lg-5">
+						<div class="media">
+							<small class="media-body media-bottom">
+								&copy; CEG Tech Forum. All rights reserved. <br>
+							</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript">
+			function upCounter()
+			{
+				var valuesToSubmit = true
+				$.ajax({
+					type: "GET",
+			        url: '/count', //sumbits it to the given url of the form
+			        data: valuesToSubmit,
+        			dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+        		}).success(function(json){
+        			console.log("success", json);
+        		});
+    			return false; // prevents normal behaviour
+    		}
+    	</script>

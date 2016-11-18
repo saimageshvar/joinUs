@@ -1,0 +1,2 @@
+module JoinUsHelper
+end
