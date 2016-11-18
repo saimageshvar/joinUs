@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'join_us#index'
   get 'join_us/index'
   match '/create' => 'join_us#create', via: :post
   match '/count' => 'join_us#count', via: :get
